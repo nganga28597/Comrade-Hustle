@@ -1,0 +1,1645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComradeHustle | Campus Jobs</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="ecommerce.js" defer></script>
+</head>
+<body>
+     <section class="project-team" aria-labelledby="project-team-heading">
+        <h1 id="project-team-heading">Project Team Members Group A</h1>
+            <ol>
+                <li>Munyao Judy Wanza — PA106/G/28615/25</li>
+                <li>Kivuva J. Musyoka — PA106/G/28612/25</li>
+                <li>Korir Kiplagat Oscar — PA106/G/28578/25</li>
+                <li>Kariuki Evan Gichuhi — PA106/G/28614/25</li>
+                <li>Ng'ang'a Myles J. Muinde — PA106/G/28597/25</li>
+            </ol>
+    </section>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <a href="#" class="logo" onclick="showPage('landing')">
+           <!-- <img class="logo-mark" src="Artboard%201.svg" alt=""> -->
+            Comrade<span>Hustle</span>
+        </a>
+
+        <nav>
+            <button onclick="showPage('landing')">Home</button>
+            <button id="browseJobsButton" onclick="showPage('jobs')" hidden>Browse Jobs</button>
+            <button id="hirerPostJobButton" onclick="openPostJob()" hidden>Post a Job</button>
+            <button id="loginNavButton" class="btn btn-primary"
+                    onclick="showPage('login')">Login</button>
+            <button id="signupNavButton" class="btn btn-primary"
+                    onclick="showPage('signup')">Sign Up</button>
+            <div id="accountMenu" class="account-menu" hidden>
+                <button id="accountMenuButton" class="account-menu-trigger"
+                        type="button" aria-haspopup="true" aria-expanded="false"
+                        aria-label="Open account menu"
+                        aria-controls="accountMenuOptions" onclick="toggleAccountMenu()">
+                    <span id="accountMenuAvatar" class="account-menu-avatar" aria-hidden="true"></span>
+                </button>
+                <div id="accountMenuOptions" class="account-menu-options" role="menu" hidden>
+                    <button type="button" role="menuitem" onclick="handleAccountMenuAction('profile')">
+                        Profile
+                    </button>
+                    <button type="button" role="menuitem" onclick="handleAccountMenuAction('settings')">
+                        Account settings
+                    </button>
+                    <button type="button" role="menuitem" onclick="handleAccountMenuAction('messages')">
+                        Messages
+                    </button>
+                    <button type="button" role="menuitem" onclick="handleAccountMenuAction('billing')">
+                        Billing & Payments
+                    </button>
+                    <button id="accountReferralMenuItem" type="button" role="menuitem"
+                            onclick="handleAccountMenuAction('referrals')">
+                        Refer a friend
+                    </button>
+                    <button type="button" role="menuitem" onclick="handleAccountMenuAction('help')">
+                        Help Center
+                    </button>
+                </div>
+            </div>
+        </nav>
+       
+    </header>
+
+    <main>
+        <!-- PAGE 1: LOADING PAGE -->
+        <section id="loading" class="page loading-page">
+            <div class="loading-content">
+                <div class="big-logo"></div>
+                <h1>Comrade<span>Hustle</span></h1>
+                <p>Small Jobs. Real People. Better Tomorrow.</p>
+                <p>Campus side hustles for comrades.</p>
+                <div class="loader"></div>
+                <p>Loading opportunities...</p>
+            </div>
+        </section>
+
+        <!-- PAGE 2: LANDING PAGE -->
+        <section id="landing" class="page">
+            <div class="hero landing-hero">
+                <div class="hero-content">
+                  <!--  <img class="landing-brand-mark"
+                         src="Artboard%201.svg" alt="ComradeHustle"> -->
+                    <p class="eyebrow">A campus-powered community · Kirinyaga University</p>
+                    <h1>Your next side hustle is one tap away</h1>
+                    <p>
+                        Find flexible, paid tasks shared by fellow students and university departments.
+                        Earn on your schedule, build real experience, and make student life a little
+                        less stressful.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"
+                                onclick="showPage('jobs')">
+                            Explore campus jobs <span aria-hidden="true">→</span>
+                        </button>
+                        <button class="btn btn-outline"
+                                onclick="chooseHirer()">
+                            I need a hand
+                        </button>
+                    </div>
+                    <div class="hero-proof">
+                        <span class="hero-proof-icon" aria-hidden="true">◎</span>
+                        <span>Kirinyaga University . Kutus</span>
+                    </div>
+                </div>
+                <aside class="hero-showcase" aria-label="Examples of campus tasks">
+                    <div class="showcase-orbit showcase-orbit-one"></div>
+                    <div class="showcase-orbit showcase-orbit-two"></div>
+                    <div class="showcase-caption">A little work can go a long way</div>
+                    <article class="showcase-job showcase-job-main">
+                        <span class="showcase-job-icon">✎</span>
+                        <div>
+                            <span class="showcase-label">EXAMPLE CAMPUS TASK</span>
+                            <h2>Design a club poster</h2>
+                            <p>Creative · Flexible hours</p>
+                        </div>
+                        <span class="showcase-pay">KSh 600</span>
+                    </article>
+                    <article class="showcase-job showcase-job-float">
+                        <span class="showcase-float-icon">✓</span>
+                        <div>
+                            <strong>Made for student life</strong>
+                            <p>Pick tasks that fit your timetable</p>
+                        </div>
+                    </article>
+                    <div class="showcase-doodle" aria-hidden="true">✳</div>
+                </aside>
+            </div>
+
+            <div class="features">
+                <article class="feature">
+                    <div class="feature-icon">⏱</div>
+                    <h3>Fits your timetable</h3>
+                    <p>Choose short tasks that work around lectures and campus life.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="feature-icon">⌂</div>
+                    <h3>Close to home</h3>
+                    <p>Find opportunities from students and university departments.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="feature-icon">✦</div>
+                    <h3>Grow your skills</h3>
+                    <p>Turn what you know into experience you can build on.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="feature-icon">↗</div>
+                    <h3>Earn with purpose</h3>
+                    <p>Get paid for useful work and help a fellow comrade, too.</p>
+                </article>
+            </div>
+
+            <section class="how-section section" aria-labelledby="how-heading">
+                <div class="section-heading how-heading">
+                    <div>
+                        <p class="eyebrow">SIMPLE BY DESIGN</p>
+                        <h2 id="how-heading">One campus. Two ways to get ahead.</h2>
+                        <p class="muted">
+                            ComradeHustle brings people who need a hand together with students
+                            ready to lend theirs.
+                        </p>
+                    </div>
+                    <span class="how-stamp" aria-hidden="true">MADE FOR<br>COMRADES</span>
+                </div>
+
+                <div class="journey-grid">
+                    <article class="journey-card freelancer-journey">
+                        <div class="journey-topline">
+                            <span class="journey-icon">🎒</span>
+                            <span class="journey-kicker">FOR FREELANCERS</span>
+                        </div>
+                        <h3>Find a hustle that works around your studies.</h3>
+                        <p class="journey-intro">
+                            Pick up practical, paid tasks on campus, earn extra money, and
+                            grow your confidence one job at a time.
+                        </p>
+                        <ol class="journey-steps">
+                            <li>
+                                <span class="step-number">01</span>
+                                <div><h4>Sign up as a freelancer</h4>
+                                    <p>Create your student profile and tell us a little about you.</p></div>
+                            </li>
+                            <li>
+                                <span class="step-number">02</span>
+                                <div><h4>Find a task that fits</h4>
+                                    <p>Explore campus jobs, check the details, pay, and deadline.</p></div>
+                            </li>
+                            <li>
+                                <span class="step-number">03</span>
+                                <div><h4>Connect, do the work, get paid</h4>
+                                    <p>Reach out to the hirer, agree on the details, and complete the task.</p></div>
+                            </li>
+                        </ol>
+                        <button class="btn btn-primary journey-button"
+                                onclick="chooseFreelancer()">
+                            Find your first hustle <span aria-hidden="true">→</span>
+                        </button>
+                        <span class="journey-watermark" aria-hidden="true">F</span>
+                    </article>
+
+                    <article class="journey-card hirer-journey">
+                        <div class="journey-topline">
+                            <span class="journey-icon">📋</span>
+                            <span class="journey-kicker">FOR HIRERS</span>
+                        </div>
+                        <h3>Get a task done. Give a comrade a chance.</h3>
+                        <p class="journey-intro">
+                            Whether you're a student or a department, find reliable helping
+                            hands from right here in the campus community.
+                        </p>
+                        <ol class="journey-steps">
+                            <li>
+                                <span class="step-number">01</span>
+                                <div><h4>Sign up as a hirer</h4>
+                                    <p>Choose a student or university department account.</p></div>
+                            </li>
+                            <li>
+                                <span class="step-number">02</span>
+                                <div><h4>Post a clear, paid task</h4>
+                                    <p>Share what needs doing, the skills, deadline, and your budget.</p></div>
+                            </li>
+                            <li>
+                                <span class="step-number">03</span>
+                                <div><h4>Choose a comrade and agree</h4>
+                                    <p>Connect directly, confirm the details, then pay when the work is done.</p></div>
+                            </li>
+                        </ol>
+                        <button class="btn btn-primary journey-button"
+                                onclick="chooseHirer()">
+                            Post your first task <span aria-hidden="true">→</span>
+                        </button>
+                        <span class="journey-watermark" aria-hidden="true">H</span>
+                    </article>
+                </div>
+            </section>
+
+            <section class="campus-note" aria-labelledby="campus-note-heading">
+                <div class="campus-note-pattern" aria-hidden="true"></div>
+                <div class="campus-note-content">
+                    <p class="eyebrow">MORE THAN A PAYDAY</p>
+                    <h2 id="campus-note-heading">A little breathing room can change a student's week.</h2>
+                    <p>
+                        Campus life can stretch a student's budget. ComradeHustle makes it
+                        easier to discover useful work nearby—so students can earn towards
+                        everyday needs while campus groups and departments get help from
+                        people who understand their community.
+                    </p>
+                </div>
+                <div class="campus-values">
+                    <div class="campus-value">
+                        <span>01</span>
+                        <strong>Keep it local</strong>
+                        <p>Opportunities start with the people around you.</p>
+                    </div>
+                    <div class="campus-value">
+                        <span>02</span>
+                        <strong>Keep it flexible</strong>
+                        <p>Short tasks can fit around a real student schedule.</p>
+                    </div>
+                    <div class="campus-value">
+                        <span>03</span>
+                        <strong>Keep it fair</strong>
+                        <p>Agree on the task, timeline, and pay before work begins.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR NEXT STEP STARTS HERE</p>
+                        <h2>Ready to make campus work for you?</h2>
+                        <p class="muted">Join the community—as a student ready to earn or a hirer ready to get things done.</p>
+                    </div>
+                </div>
+
+                <div class="role-cards">
+                    <article class="role-card landing-role-card">
+                        <span class="role-card-number">01 / EARN</span>
+                        <div class="feature-icon">🎒</div>
+                        <h3>Put your skills to work.</h3>
+                        <p>Discover short jobs and earn money
+                           while studying. Your next opportunity could be just around the corner.</p>
+                        <button class="btn btn-primary"
+                                onclick="chooseFreelancer()">
+                            Join as a freelancer <span aria-hidden="true">→</span>
+                        </button>
+                        <span class="role-card-decoration" aria-hidden="true">✳</span>
+                    </article>
+
+                    <article class="role-card landing-role-card hirer-role-card">
+                        <span class="role-card-number">02 / GET HELP</span>
+                        <div class="feature-icon">📋</div>
+                        <h3>Find the right helping hand.</h3>
+                        <p>Post a task and find a student
+                           with the right skills. Support a comrade as you get it done.</p>
+                        <button class="btn btn-primary"
+                                onclick="chooseHirer()">
+                            Join as a hirer <span aria-hidden="true">→</span>
+                        </button>
+                        <span class="role-card-decoration" aria-hidden="true">✳</span>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE 3: SIGNUP PAGE -->
+        <section id="signup" class="page auth-section">
+            <div class="auth-layout">
+                <aside class="auth-story">
+                    <a href="#" class="auth-brand" onclick="showPage('landing'); return false;">
+                        Comrade<span>Hustle</span>
+                    </a>
+                    <p class="auth-location">KIRINYAGA UNIVERSITY · KUTUS</p>
+                    <div class="auth-story-copy">
+                        <h1 class="auth-story-heading">Your next side hustle is one tap away.</h1>
+                        <p class="auth-story-description">
+                            Tutoring, events, data entry and more — flexible work around your lectures.
+                        </p>
+                    </div>
+                    <div class="auth-story-note">
+                        <span class="auth-story-icon" aria-hidden="true">✦</span>
+                        <span>Small jobs. Real people. Better tomorrow.</span>
+                    </div>
+                </aside>
+
+                <div class="auth-form-panel">
+                    <div class="auth-card">
+                        <p class="eyebrow">JOIN OUR COMMUNITY</p>
+                        <h1>Create your account</h1>
+                        <p class="muted">Choose how you'll use ComradeHustle.</p>
+
+                        <div class="role-selector" aria-label="Choose account type">
+                            <button type="button" class="role-option active"
+                                    data-role-option="freelancer" aria-pressed="true"
+                                    onclick="selectRole('freelancer')">
+                                🎒 Freelancer
+                                <small>Find short jobs</small>
+                            </button>
+                            <button type="button" class="role-option"
+                                    data-role-option="hirer" aria-pressed="false"
+                                    onclick="selectRole('hirer')">
+                                💼 Hirer
+                                <small>Hire students</small>
+                            </button>
+                        </div>
+
+                        <div class="role-selector hirer-type-selector" hidden
+                             aria-label="Choose hirer type">
+                            <button type="button" class="role-option active"
+                                    data-hirer-type-option="student" aria-pressed="true"
+                                    onclick="selectHirerType('student')">
+                                Students
+                                <small>I'm a fellow comrade</small>
+                            </button>
+                            <button type="button" class="role-option"
+                                    data-hirer-type-option="department" aria-pressed="false"
+                                    onclick="selectHirerType('department')">
+                                University Department
+                                <small>I'm posting for a department</small>
+                            </button>
+                        </div>
+
+                        <form id="signupForm">
+                            <label id="signupNameLabel" for="signupName">Full Name</label>
+                            <input id="signupName" type="text"
+                                   placeholder="e.g. Nicholas Mwendwa Mutuku" autocomplete="name" required>
+
+                            <label id="signupEmailLabel" for="signupEmail">Student Email</label>
+                            <input id="signupEmail" type="email"
+                                   placeholder="you.12345@students.kyu.ac.ke" autocomplete="email" required>
+
+                            <label for="signupPhone">Phone Number</label>
+                            <input id="signupPhone" type="tel"
+                                   placeholder="e.g. +254 712 345 678" autocomplete="tel" required>
+
+                            <label id="signupIdentifierLabel" for="signupIdentifier">Reg No.</label>
+                            <input id="signupIdentifier" type="text"
+                                   placeholder="e.g. PA123/G/12345/25" required>
+
+                            <div id="signupStudentDetails" class="signup-student-details">
+                                <label for="signupCourse">Course</label>
+                                <input id="signupCourse" type="text"
+                                       placeholder="e.g. Bachelor of Science in Computer Science"
+                                       maxlength="120" required>
+
+                                <label for="signupYearOfStudy">Year of study</label>
+                                <select id="signupYearOfStudy" required>
+                                    <option value="">Select your year</option>
+                                    <option value="Year 1">Year 1</option>
+                                    <option value="Year 2">Year 2</option>
+                                    <option value="Year 3">Year 3</option>
+                                    <option value="Year 4">Year 4</option>
+                                    <option value="Year 5">Year 5</option>
+                                    <option value="Year 6">Year 6</option>
+                                </select>
+                            </div>
+
+                            <label for="signupPassword">Password</label>
+                            <input id="signupPassword" type="password"
+                                   placeholder="At least 6 characters"
+                                   minlength="6" autocomplete="new-password" required>
+
+                            <label class="agreement-label" for="signupAgreement">
+                                <input id="signupAgreement" type="checkbox" required>
+                                <span>I agree to the ComradeHustle community guidelines and to pay or work honestly.</span>
+                            </label>
+
+                            <button type="submit" class="btn btn-primary full-width">
+                                Create account
+                            </button>
+                        </form>
+
+                        <p class="auth-switch">
+                            Already have an account?
+                            <a href="#" onclick="showPage('login'); return false;">Log in</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: LOGIN PAGE -->
+        <section id="login" class="page auth-section">
+            <div class="auth-layout">
+                <aside class="auth-story">
+                    <a href="#" class="auth-brand" onclick="showPage('landing'); return false;">
+                        Comrade<span>Hustle</span>
+                    </a>
+                    <p class="auth-location">KIRINYAGA UNIVERSITY · KUTUS</p>
+                    <div class="auth-story-copy">
+                        <h1 class="auth-story-heading">Welcome back, Comrade.</h1>
+                        <p class="auth-story-description">
+                            Pick up where you left off and keep making campus opportunities count.
+                        </p>
+                    </div>
+                    <div class="auth-story-note">
+                        <span class="auth-story-icon" aria-hidden="true">✦</span>
+                        <span>Small jobs. Real people. Better tomorrow.</span>
+                    </div>
+                </aside>
+
+                <div class="auth-form-panel">
+                    <div class="auth-card">
+                        <p class="eyebrow">WELCOME BACK, COMRADE</p>
+                        <h1>Log in to continue</h1>
+                        <p class="muted">Choose your account type to get started.</p>
+
+                        <div class="role-selector" aria-label="Choose account type">
+                            <button type="button" class="role-option active"
+                                    data-role-option="freelancer" aria-pressed="true"
+                                    onclick="selectRole('freelancer')">
+                                🎒 Freelancer
+                                <small>Find short jobs</small>
+                            </button>
+                            <button type="button" class="role-option"
+                                    data-role-option="hirer" aria-pressed="false"
+                                    onclick="selectRole('hirer')">
+                                💼 Hirer
+                                <small>Hire students</small>
+                            </button>
+                        </div>
+
+                        <div class="role-selector hirer-type-selector" hidden
+                             aria-label="Choose hirer type">
+                            <button type="button" class="role-option active"
+                                    data-hirer-type-option="student" aria-pressed="true"
+                                    onclick="selectHirerType('student')">
+                                Comrade
+                                <small>Student hirer</small>
+                            </button>
+                            <button type="button" class="role-option"
+                                    data-hirer-type-option="department" aria-pressed="false"
+                                    onclick="selectHirerType('department')">
+                                Department
+                                <small>University department</small>
+                            </button>
+                        </div>
+
+                        <form id="loginForm">
+                            <label id="loginIdentifierLabel" for="loginIdentifier">
+                                Reg No.
+                            </label>
+                            <input id="loginIdentifier" type="text"
+                                   placeholder="PA123/G/12345/25"
+                                   autocomplete="username" required>
+
+                            <label for="loginPassword">Password</label>
+                            <input id="loginPassword" type="password"
+                                   placeholder="Enter your password"
+                                   autocomplete="current-password" required>
+                            <a class="forgot-password" href="#"
+                               onclick="showNotice('Password reset is not available in this demo.'); return false;">
+                                Forgot password?
+                            </a>
+
+                            <button type="submit" class="btn btn-primary full-width">
+                                Log in
+                            </button>
+                        </form>
+
+                        <p class="auth-switch">
+                            New to ComradeHustle?
+                            <a href="#" onclick="showPage('signup'); return false;">Sign up</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: HOME / JOB DASHBOARD -->
+        <section id="jobs" class="page section">
+            <div class="dashboard-heading">
+                <div>
+                    <p class="eyebrow">CAMPUS OPPORTUNITIES</p>
+                    <h1>Find Your Next Hustle</h1>
+                    <p class="muted">
+                        Explore opportunities around Kirinyaga University.
+                    </p>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input id="jobSearch" type="search"
+                       placeholder="Search jobs, skills or categories...">
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Events">Events</option>
+                    <option value="Creative">Creative</option>
+                    <option value="Academic">Academic Support</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div id="jobCount" class="muted job-count"></div>
+            <div id="jobList" class="job-grid"></div>
+        </section>
+
+        <!-- PAGE 6: JOB DESCRIPTION PAGE -->
+        <section id="jobDetails" class="page section">
+            <button class="back-button" onclick="showPage('jobs')">
+                ← Back to Jobs
+            </button>
+
+            <div id="jobDetailsContent"></div>
+        </section>
+
+        <!-- PAGE 7: POST A JOB PAGE -->
+        <section id="postJob" class="page post-job-page">
+            <div class="post-job-layout">
+                <aside class="post-job-sidebar" aria-label="Hirer navigation">
+                    <a href="#" class="post-job-brand"
+                       onclick="showPage('landing'); return false;">
+                        Comrade<span>Hustle</span>
+                    </a>
+                    <p class="post-job-campus">KIRINYAGA UNIVERSITY</p>
+
+                    <nav class="post-job-nav" aria-label="Hirer menu">
+                        <button class="post-job-nav-link active" type="button"
+                                aria-current="page"
+                                onclick="openPostJob()">
+                            <span aria-hidden="true">＋</span> Post a task
+                        </button>
+                        <button class="post-job-nav-link" type="button"
+                                onclick="openMyPostings()">
+                            <span aria-hidden="true">▤</span> My postings
+                            <span id="postJobPostingsCount" class="post-job-nav-count">0</span>
+                        </button>
+                        <button class="post-job-nav-link" type="button"
+                                onclick="handleAccountMenuAction('messages')">
+                            <span aria-hidden="true">✉</span> Messages
+                            <span class="post-job-nav-count">4</span>
+                        </button>
+                        <button class="post-job-nav-link" type="button"
+                                onclick="showPage('profile')">
+                            <span aria-hidden="true">◉</span> Profile
+                        </button>
+                        <button class="post-job-nav-link post-job-action-link"
+                                type="button" onclick="openPostJob()">
+                            Post a Job
+                        </button>
+                    </nav>
+
+                    <div class="post-job-sidebar-user">
+                        <span class="post-job-avatar" id="postJobSidebarAvatar">CH</span>
+                        <span>
+                            <strong id="postJobSidebarName">Your account</strong>
+                            <small>Hirer</small>
+                        </span>
+                    </div>
+                </aside>
+
+                <div class="post-job-main">
+                    <header class="post-job-heading">
+                        <a href="#" class="post-job-breadcrumb"
+                           onclick="showPage('employerWelcome'); return false;">‹ &nbsp; Employer dashboard</a>
+                        <p class="eyebrow">MY POSTING</p>
+                        <h1>Post a task</h1>
+                        <p>Tell comrades what you need done, what it pays and how to reach you.
+                            Your task goes live as soon as you publish.</p>
+                    </header>
+
+                    <form id="postJobForm" class="post-job-form">
+                        <section class="post-job-section" aria-labelledby="post-task-heading">
+                            <div class="post-job-section-heading">
+                                <span class="post-job-section-number">01</span>
+                                <div>
+                                    <h2 id="post-task-heading">The task</h2>
+                                    <p>A clear title and summary help comrades decide quickly.</p>
+                                </div>
+                            </div>
+
+                            <div class="post-job-field">
+                                <div class="post-job-label-row">
+                                    <label for="jobTitle">Task title</label>
+                                    <span id="jobTitleCounter" class="post-job-counter">0/70</span>
+                                </div>
+                                <input id="jobTitle" type="text" maxlength="70"
+                                       placeholder="e.g. Event ushers for the Career Fair" required>
+                            </div>
+
+                            <fieldset class="post-job-field post-job-category-field">
+                                <legend>Category</legend>
+                                <input id="jobCategory" type="hidden" value="Academic">
+                                <div class="post-job-category-options" aria-label="Task category">
+                                    <button type="button" class="post-job-category active"
+                                            data-category="Academic" data-category-label="Tutoring"
+                                            aria-pressed="true"
+                                            onclick="selectPostJobCategory(this)">Tutoring</button>
+                                    <button type="button" class="post-job-category"
+                                            data-category="Creative" data-category-label="Design"
+                                            aria-pressed="false"
+                                            onclick="selectPostJobCategory(this)">Design</button>
+                                    <button type="button" class="post-job-category"
+                                            data-category="Academic" data-category-label="Academics"
+                                            aria-pressed="false"
+                                            onclick="selectPostJobCategory(this)">Academics</button>
+                                    <button type="button" class="post-job-category"
+                                            data-category="Creative" data-category-label="Photography"
+                                            aria-pressed="false"
+                                            onclick="selectPostJobCategory(this)">Photography</button>
+                                    <button type="button" class="post-job-category"
+                                            data-category="Technology" data-category-label="Tech"
+                                            aria-pressed="false"
+                                            onclick="selectPostJobCategory(this)">Tech</button>
+                                    <button type="button" class="post-job-category"
+                                            data-category="Other" data-category-label="Errands"
+                                            aria-pressed="false"
+                                            onclick="selectPostJobCategory(this)">Errands</button>
+                                </div>
+                            </fieldset>
+
+                            <div class="post-job-field">
+                                <div class="post-job-label-row">
+                                    <label for="jobSummary">One-line summary</label>
+                                    <span id="jobSummaryCounter" class="post-job-counter">0/120</span>
+                                </div>
+                                <input id="jobSummary" type="text" maxlength="120"
+                                       placeholder="e.g. Help re-shelve returned books before exams"
+                                       required>
+                                <small class="post-job-help">Shown under the title in the job list.</small>
+                            </div>
+
+                            <div class="post-job-field">
+                                <div class="post-job-label-row">
+                                    <label for="jobDescription">Full description</label>
+                                    <span class="post-job-field-note">Background and useful details</span>
+                                </div>
+                                <textarea id="jobDescription" rows="4" maxlength="1200"
+                                          placeholder="Explain the task in your own words"
+                                          required></textarea>
+                            </div>
+
+                            <div class="post-job-field">
+                                <div class="post-job-label-row">
+                                    <span class="post-job-group-label">What the comrades will do</span>
+                                    <span class="post-job-field-note">Short, specific points work best</span>
+                                </div>
+                                <div id="jobTasks" class="post-job-list">
+                                    <div class="post-job-list-item">
+                                        <span aria-hidden="true">•</span>
+                                        <input type="text" class="job-task-input"
+                                               aria-label="Task to be completed"
+                                               placeholder="e.g. Register guests at the entrance"
+                                               required>
+                                        <button type="button" class="post-job-remove"
+                                                aria-label="Remove task">×</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="post-job-add"
+                                        data-add-list="jobTasks" data-add-kind="task">＋ Add a task</button>
+                            </div>
+
+                            <div class="post-job-field">
+                                <div class="post-job-label-row">
+                                    <span class="post-job-group-label">Who you're looking for</span>
+                                    <span class="post-job-field-note">Optional</span>
+                                </div>
+                                <div id="jobRequirements" class="post-job-list">
+                                    <div class="post-job-list-item">
+                                        <span aria-hidden="true">•</span>
+                                        <input type="text" class="job-requirement-input"
+                                               aria-label="Required skill or qualification"
+                                               placeholder="e.g. Own laptop with Microsoft Word">
+                                        <button type="button" class="post-job-remove"
+                                                aria-label="Remove requirement">×</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="post-job-add"
+                                        data-add-list="jobRequirements"
+                                        data-add-kind="requirement">＋ Add a requirement</button>
+                            </div>
+                        </section>
+
+                        <section class="post-job-section" aria-labelledby="post-pay-heading">
+                            <div class="post-job-section-heading">
+                                <span class="post-job-section-number">02</span>
+                                <div>
+                                    <h2 id="post-pay-heading">Pay &amp; timing</h2>
+                                    <p>Comrades are paid directly by you, usually via M-Pesa.</p>
+                                </div>
+                            </div>
+
+                            <div class="post-job-grid post-job-grid-three">
+                                <div class="post-job-field post-job-pay-field">
+                                    <label for="jobPay">Pay</label>
+                                    <div class="post-job-money-input">
+                                        <span>KES</span>
+                                        <input id="jobPay" type="number" min="1" step="1"
+                                               placeholder="800" required>
+                                    </div>
+                                </div>
+                                <fieldset class="post-job-field post-job-paid-field">
+                                    <legend>Payment type</legend>
+                                    <div class="post-job-segmented">
+                                        <label><input type="radio" name="jobPayType" value="fixed" checked>
+                                            <span>Fixed</span></label>
+                                        <label><input type="radio" name="jobPayType" value="hourly">
+                                            <span>Per hour</span></label>
+                                        <label><input type="radio" name="jobPayType" value="daily">
+                                            <span>Per day</span></label>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="post-job-grid post-job-grid-three">
+                                <div class="post-job-field">
+                                    <label for="jobOpenings">Comrades needed</label>
+                                    <input id="jobOpenings" type="number" min="1" step="1"
+                                           value="1" required>
+                                </div>
+                                <div class="post-job-field">
+                                    <label for="jobDuration">Duration</label>
+                                    <input id="jobDuration" type="text" maxlength="60"
+                                           placeholder="e.g. 2 days" required>
+                                </div>
+                                <div class="post-job-field">
+                                    <label for="jobDeadline">Apply by</label>
+                                    <input id="jobDeadline" type="date" required>
+                                </div>
+                            </div>
+
+                            <div class="post-job-grid post-job-grid-two">
+                                <div class="post-job-field">
+                                    <label for="jobLocation">Location</label>
+                                    <input id="jobLocation" type="text" maxlength="100"
+                                           placeholder="e.g. Main Library, or Remote" required>
+                                </div>
+                                <div class="post-job-field">
+                                    <label for="jobSchedule">Schedule <span>Optional</span></label>
+                                    <input id="jobSchedule" type="text" maxlength="100"
+                                           placeholder="e.g. Mon-Wed, 2:00 pm-6:00 pm">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="post-job-section" aria-labelledby="post-contact-heading">
+                            <div class="post-job-section-heading">
+                                <span class="post-job-section-number">03</span>
+                                <div>
+                                    <h2 id="post-contact-heading">How comrades reach you</h2>
+                                    <p>Shown on your task page so comrades can contact you.</p>
+                                </div>
+                            </div>
+
+                            <div class="post-job-grid post-job-grid-two">
+                                <div class="post-job-field">
+                                    <label for="jobPhone">Phone</label>
+                                    <input id="jobPhone" type="tel" autocomplete="tel"
+                                           placeholder="e.g. 0723 551 902" required>
+                                </div>
+                                <div class="post-job-field">
+                                    <label for="jobWhatsapp">WhatsApp <span>Optional</span></label>
+                                    <input id="jobWhatsapp" type="tel"
+                                           placeholder="e.g. 0723 551 902">
+                                </div>
+                                <div class="post-job-field">
+                                    <label for="jobEmail">Email</label>
+                                    <input id="jobEmail" type="email" autocomplete="email"
+                                           placeholder="you@students.kyu.ac.ke" required>
+                                </div>
+                                <div class="post-job-field">
+                                    <label for="jobMeetingPoint">Meeting point <span>Optional</span></label>
+                                    <input id="jobMeetingPoint" type="text" maxlength="100"
+                                           placeholder="e.g. Main entrance">
+                                </div>
+                            </div>
+
+                            <fieldset class="post-job-field">
+                                <legend>Preferred contact</legend>
+                                <div class="post-job-contact-options">
+                                    <label><input type="radio" name="jobPreferredContact"
+                                                  value="WhatsApp" checked><span>WhatsApp</span></label>
+                                    <label><input type="radio" name="jobPreferredContact"
+                                                  value="Call"><span>Call</span></label>
+                                    <label><input type="radio" name="jobPreferredContact"
+                                                  value="Email"><span>Email</span></label>
+                                </div>
+                            </fieldset>
+
+                            <div class="post-job-field post-job-best-time">
+                                <label for="jobBestTime">Best time to reach you <span>Optional</span></label>
+                                <input id="jobBestTime" type="text" maxlength="80"
+                                       placeholder="e.g. Evenings after 5:00 pm">
+                            </div>
+                        </section>
+
+                        <div class="post-job-actions">
+                            <p>Comrades can apply as soon as you publish.</p>
+                            <div>
+                                <button type="button" class="btn btn-outline"
+                                        onclick="showPage('employerWelcome')">Cancel</button>
+                                <button type="submit" class="btn btn-primary">
+                                    Publish task <span aria-hidden="true">→</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="post-job-preview-panel" aria-label="Task preview and publishing checklist">
+                    <div class="post-job-preview-heading">
+                        <h2>Preview</h2>
+                        <p>How comrades will see your task in Browse jobs</p>
+                    </div>
+                    <article class="post-job-preview-card">
+                        <div class="post-job-preview-user">
+                            <span class="post-job-avatar" id="postJobPreviewAvatar">CH</span>
+                            <div>
+                                <h3 id="postJobPreviewTitle">Your task title</h3>
+                                <p id="postJobPreviewHirer">Your name · Category</p>
+                            </div>
+                        </div>
+                        <p id="postJobPreviewSummary" class="post-job-preview-summary">
+                            A one-line summary of the task appears here.
+                        </p>
+                        <div class="post-job-preview-meta">
+                            <span><strong>Location</strong><span id="postJobPreviewLocation">Location</span></span>
+                            <span><strong>Duration</strong><span id="postJobPreviewDuration">Duration</span></span>
+                        </div>
+                        <div class="post-job-preview-pay">
+                            <span id="postJobPreviewOpenings">1 opening</span>
+                            <strong id="postJobPreviewPay">KES —</strong>
+                        </div>
+                    </article>
+
+                    <div class="post-job-checklist">
+                        <h2>Ready to publish</h2>
+                        <ul>
+                            <li id="postJobCheckDetails"><span aria-hidden="true">○</span> Task details</li>
+                            <li id="postJobCheckTasks"><span aria-hidden="true">○</span> What they'll do</li>
+                            <li id="postJobCheckPay"><span aria-hidden="true">○</span> Pay &amp; timing</li>
+                            <li id="postJobCheckContact"><span aria-hidden="true">○</span> Contact details</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- PAGE 8: MY POSTINGS -->
+        <section id="myPostings" class="page my-postings-page">
+            <div class="my-postings-layout">
+                <aside class="post-job-sidebar" aria-label="Hirer navigation">
+                    <a href="#" class="post-job-brand"
+                       onclick="showPage('landing'); return false;">
+                        Comrade<span>Hustle</span>
+                    </a>
+                    <p class="post-job-campus">KIRINYAGA UNIVERSITY</p>
+
+                    <nav class="post-job-nav" aria-label="Hirer menu">
+                        <button class="post-job-nav-link" type="button"
+                                onclick="openPostJob()">
+                            <span aria-hidden="true">＋</span> Post a task
+                        </button>
+                        <button class="post-job-nav-link active" type="button"
+                                aria-current="page">
+                            <span aria-hidden="true">▤</span> My postings
+                            <span id="myPostingsNavCount" class="post-job-nav-count">0</span>
+                        </button>
+                        <button class="post-job-nav-link" type="button"
+                                onclick="handleAccountMenuAction('messages')">
+                            <span aria-hidden="true">✉</span> Messages
+                            <span class="post-job-nav-count">4</span>
+                        </button>
+                        <button class="post-job-nav-link" type="button"
+                                onclick="showPage('profile')">
+                            <span aria-hidden="true">◉</span> Profile
+                        </button>
+                        <button class="post-job-nav-link post-job-action-link"
+                                type="button" onclick="openPostJob()">
+                            Post a Job
+                        </button>
+                    </nav>
+
+                    <div class="post-job-sidebar-user">
+                        <span class="post-job-avatar" id="myPostingsSidebarAvatar">CH</span>
+                        <span>
+                            <strong id="myPostingsSidebarName">Your account</strong>
+                            <small>Hirer</small>
+                        </span>
+                    </div>
+                </aside>
+
+                <div class="my-postings-main">
+                    <header class="my-postings-heading">
+                        <p class="eyebrow">MY POSTINGS</p>
+                        <h1>My postings</h1>
+                        <p>Review who applied and pick the comrades you want.</p>
+                    </header>
+                    <div class="my-postings-content">
+                        <section class="my-postings-list-panel" aria-labelledby="my-postings-list-heading">
+                            <div class="my-postings-list-heading">
+                                <h2 id="my-postings-list-heading">Your tasks</h2>
+                                <span id="myPostingsTotal" class="my-postings-total">0</span>
+                            </div>
+                            <div id="myPostingsList" class="my-postings-list"></div>
+                        </section>
+
+                        <section id="myPostingApplicants" class="my-posting-applicants"
+                                 aria-live="polite"></section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EMPLOYER WELCOME AND DASHBOARD -->
+        <section id="employerWelcome" class="page employer-welcome-page">
+            <div id="employerWelcomeContent"></div>
+        </section>
+
+        <!-- PAGE 8: REFERRAL PROGRAM -->
+        <section id="referrals" class="page referral-page">
+            <section class="referral-hero" aria-labelledby="referral-heading">
+                <div class="referral-hero-copy">
+                    <p class="eyebrow">GOOD WORK IS BETTER SHARED</p>
+                    <h1 id="referral-heading">Bring a comrade.<br><span>Both get a boost.</span></h1>
+                    <p>
+                        Invite friends to ComradeHustle. They get 10% off their first
+                        completed task, and you can earn up to KSh 500 in credits —
+                        up to KSh 50 for every comrade who joins.
+                    </p>
+                    <a class="btn btn-primary" href="#referral-invite">
+                        Invite your friends <span aria-hidden="true">→</span>
+                    </a>
+                    <p class="referral-hero-note">A little share can go a long way on campus.</p>
+                </div>
+                <div class="referral-illustration" aria-hidden="true">
+                    <span class="referral-spark referral-spark-one">✦</span>
+                    <span class="referral-spark referral-spark-two">✳</span>
+                    <div class="referral-person referral-person-one">J</div>
+                    <div class="referral-person referral-person-two">A</div>
+                    <div class="referral-reward-card">
+                        <span class="referral-reward-icon">↗</span>
+                        <span class="referral-reward-label">COMRADE CREDIT</span>
+                        <strong>KSh 50</strong>
+                        <span class="referral-reward-status">A friend joined your hustle</span>
+                    </div>
+                    <span class="referral-illustration-caption">Good things grow together</span>
+                </div>
+            </section>
+
+            <section id="referral-invite" class="referral-invite-card"
+                     aria-labelledby="referral-invite-heading">
+                <div>
+                    <p class="eyebrow">YOUR INVITE LINK</p>
+                    <h2 id="referral-invite-heading">Ready when you are</h2>
+                    <p>Copy your personal link and send it to a friend.</p>
+                </div>
+                <div class="referral-link-controls">
+                    <label class="sr-only" for="referralLink">Your personal referral link</label>
+                    <input id="referralLink" type="text" readonly>
+                    <button class="btn btn-primary" type="button" onclick="copyReferralLink()">
+                        Copy link
+                    </button>
+                    <button class="btn btn-outline referral-share-button" type="button"
+                            onclick="shareReferralLink()">Share</button>
+                </div>
+            </section>
+
+            <section class="referral-steps-section" aria-labelledby="referral-steps-heading">
+                <div class="referral-section-heading">
+                    <p class="eyebrow">FROM REFERRAL TO REWARD</p>
+                    <h2 id="referral-steps-heading">Three easy steps. More good things.</h2>
+                </div>
+                <div class="referral-steps">
+                    <article class="referral-step">
+                        <span class="referral-step-number">01</span>
+                        <span class="referral-step-icon" aria-hidden="true">↗</span>
+                        <h3>Share your link</h3>
+                        <p>Send your personal invite to friends, classmates, or your campus group.</p>
+                    </article>
+                    <article class="referral-step">
+                        <span class="referral-step-number">02</span>
+                        <span class="referral-step-icon" aria-hidden="true">＋</span>
+                        <h3>Your friend joins</h3>
+                        <p>They create an account through your invite and get 10% off their first task.</p>
+                    </article>
+                    <article class="referral-step">
+                        <span class="referral-step-number">03</span>
+                        <span class="referral-step-icon" aria-hidden="true">★</span>
+                        <h3>You both get rewarded</h3>
+                        <p>Once their first task is complete, you earn up to KSh 50 in demo credits.</p>
+                    </article>
+                </div>
+            </section>
+
+            <p class="referral-demo-note">
+                Referral rewards are a website demo and are not currently redeemable or tracked.
+            </p>
+        </section>
+
+        <!-- PAGE 8: PROFILE PAGE -->
+        <section id="profile" class="page profile-page">
+            <div class="profile-page-heading">
+                <div>
+                    <p class="eyebrow">ACCOUNT</p>
+                    <h1>My Profile</h1>
+                    <p>Manage your ComradeHustle account and personal information.</p>
+                </div>
+            </div>
+            <div class="profile-layout">
+                <aside class="profile-sidebar" aria-label="Account navigation">
+                    <div id="profileSummary" class="profile-summary"></div>
+                    <nav class="profile-sidebar-nav" aria-label="Account sections">
+                        <button class="active" type="button"
+                                onclick="handleAccountMenuAction('profile')">My Profile</button>
+                        <button type="button"
+                                onclick="handleAccountMenuAction('billing')">Billing & Payments</button>
+                        <button type="button"
+                                onclick="handleAccountMenuAction('help')">Help</button>
+                    </nav>
+                    <div id="profileActions" class="profile-actions"></div>
+                </aside>
+                <div id="profileContent" class="profile-content"></div>
+            </div>
+        </section>
+
+        <!-- ACCOUNT SETTINGS -->
+        <section id="settings" class="page profile-page account-settings-page">
+            <div class="profile-page-heading">
+                <div>
+                    <p class="eyebrow">ACCOUNT</p>
+                    <h1>Account settings</h1>
+                    <p>Manage your personal information and account details.</p>
+                </div>
+            </div>
+            <div class="profile-layout">
+                <aside class="profile-sidebar" aria-label="Account navigation">
+                    <div id="settingsSummary" class="profile-summary"></div>
+                    <nav class="profile-sidebar-nav" aria-label="Account sections">
+                        <button type="button"
+                                onclick="handleAccountMenuAction('profile')">My Profile</button>
+                        <button class="active" type="button" aria-current="page"
+                                onclick="handleAccountMenuAction('settings')">Account settings</button>
+                        <button type="button"
+                                onclick="handleAccountMenuAction('billing')">Billing &amp; Payments</button>
+                        <button type="button"
+                                onclick="handleAccountMenuAction('help')">Help</button>
+                    </nav>
+                    <div id="settingsActions" class="profile-actions"></div>
+                </aside>
+                <div class="settings-content">
+                    <nav class="billing-tabs" role="tablist" aria-label="Account settings sections">
+                        <button id="settingsPersonalInfoTab" class="active" type="button" role="tab"
+                                aria-selected="true" aria-controls="settingsPersonalInfoPanel"
+                                onclick="setAccountSettingsTab('personal-info')">Personal info</button>
+                        <button id="settingsSecurityTab" type="button" role="tab"
+                                aria-selected="false" aria-controls="settingsSecurityPanel"
+                                onclick="setAccountSettingsTab('security')">Account security</button>
+                        <button id="settingsNotificationsTab" type="button" role="tab"
+                                aria-selected="false" aria-controls="settingsNotificationsPanel"
+                                onclick="setAccountSettingsTab('notifications')">Notifications</button>
+                        <button id="settingsVerificationTab" type="button" role="tab"
+                                aria-selected="false" aria-controls="settingsVerificationPanel"
+                                onclick="setAccountSettingsTab('verification')">Verification</button>
+                    </nav>
+                    <div class="billing-panels">
+                        <section id="settingsPersonalInfoPanel" class="billing-panel active"
+                                 role="tabpanel" aria-labelledby="settingsPersonalInfoTab">
+                            <div class="settings-panel-stack">
+                                <section class="billing-history-card">
+                                    <div class="billing-card-heading">
+                                        <div>
+                                            <h2>Personal information</h2>
+                                            <p>University-verified details are read-only. You can update your phone number here.</p>
+                                        </div>
+                                    </div>
+                                    <form id="accountSettingsForm" class="settings-form">
+                                        <div class="settings-form-grid">
+                                            <label for="settingsName">Full name
+                                                <input id="settingsName" name="name" type="text"
+                                                       autocomplete="name" readonly>
+                                            </label>
+                                            <label for="settingsEmail">Email address
+                                                <input id="settingsEmail" name="email" type="email"
+                                                       autocomplete="email" readonly>
+                                            </label>
+                                            <label for="settingsPhone">Phone number
+                                                <input id="settingsPhone" name="phone" type="tel"
+                                                       autocomplete="tel" maxlength="30">
+                                            </label>
+                                            <label for="settingsCourse">Course
+                                                <input id="settingsCourse" name="course" type="text" readonly>
+                                            </label>
+                                            <label for="settingsRegistrationNumber">Reg No.
+                                                <input id="settingsRegistrationNumber" name="registrationNumber"
+                                                       type="text" readonly>
+                                            </label>
+                                            <label for="settingsYearOfStudy">Year of study
+                                                <input id="settingsYearOfStudy" name="yearOfStudy"
+                                                       type="text" readonly>
+                                            </label>
+                                        </div>
+                                        <div class="settings-form-footer">
+                                            <p>Name and student email are locked as university-verified details. University database verification is not connected in this demo.</p>
+                                            <button class="btn btn-primary" type="submit">Save changes</button>
+                                        </div>
+                                    </form>
+                                </section>
+                            </div>
+                        </section>
+                        <section id="settingsSecurityPanel" class="billing-panel" role="tabpanel"
+                                 aria-labelledby="settingsSecurityTab" hidden>
+                            <section class="billing-history-card">
+                                <div class="billing-card-heading">
+                                    <div>
+                                        <h2>Account security</h2>
+                                        <p>Change your password to help keep your account secure.</p>
+                                    </div>
+                                </div>
+                                <form id="accountSecurityForm" class="settings-form">
+                                    <div class="settings-form-grid">
+                                        <label for="currentPassword">Current password
+                                            <input id="currentPassword" name="currentPassword" type="password"
+                                                   autocomplete="current-password" required>
+                                        </label>
+                                        <label for="newPassword">New password
+                                            <input id="newPassword" name="newPassword" type="password"
+                                                   autocomplete="new-password" minlength="6" required>
+                                        </label>
+                                        <label for="confirmNewPassword">Confirm new password
+                                            <input id="confirmNewPassword" name="confirmNewPassword" type="password"
+                                                   autocomplete="new-password" minlength="6" required>
+                                        </label>
+                                    </div>
+                                    <div class="settings-form-footer">
+                                        <p>Password changes are kept in this demo session only.</p>
+                                        <button class="btn btn-primary" type="submit">Update password</button>
+                                    </div>
+                                </form>
+                            </section>
+                            <section class="billing-history-card">
+                                <div class="billing-card-heading">
+                                    <div>
+                                        <h2>Sign-in protection</h2>
+                                        <p>Use a unique password and never share it with another person.</p>
+                                    </div>
+                                </div>
+                                <div class="settings-guidance">
+                                    <span class="settings-guidance-icon" aria-hidden="true">✓</span>
+                                    <p>Your password is never saved in browser storage.</p>
+                                </div>
+                            </section>
+                        </section>
+                        <section id="settingsNotificationsPanel" class="billing-panel" role="tabpanel"
+                                 aria-labelledby="settingsNotificationsTab" hidden>
+                            <section class="billing-history-card">
+                                <div class="billing-card-heading">
+                                    <div>
+                                        <h2>Notifications</h2>
+                                        <p>Choose which ComradeHustle updates you would like to receive.</p>
+                                    </div>
+                                </div>
+                                <form id="accountNotificationsForm" class="settings-notifications-form">
+                                    <label class="settings-toggle-row" for="notifyMessages">
+                                        <span><strong>Messages</strong><small>Get updates when someone contacts you about a task.</small></span>
+                                        <input id="notifyMessages" name="messages" type="checkbox" checked>
+                                    </label>
+                                    <label class="settings-toggle-row" for="notifyTasks">
+                                        <span><strong>Task activity</strong><small>Receive updates about jobs you post or apply for.</small></span>
+                                        <input id="notifyTasks" name="tasks" type="checkbox" checked>
+                                    </label>
+                                    <label class="settings-toggle-row" for="notifyTips">
+                                        <span><strong>Tips and announcements</strong><small>Occasional news and ideas for your campus work.</small></span>
+                                        <input id="notifyTips" name="tips" type="checkbox">
+                                    </label>
+                                    <div class="settings-form-footer">
+                                        <p>Preferences are kept for this page session only.</p>
+                                        <button class="btn btn-primary" type="submit">Save preferences</button>
+                                    </div>
+                                </form>
+                            </section>
+                        </section>
+                        <section id="settingsVerificationPanel" class="billing-panel" role="tabpanel"
+                                 aria-labelledby="settingsVerificationTab" hidden>
+                            <section class="billing-history-card">
+                                <div class="billing-card-heading">
+                                    <div>
+                                        <h2>Identity verification</h2>
+                                        <p>Verified account details help build trust in the campus community.</p>
+                                    </div>
+                                </div>
+                                <div class="settings-verification-content">
+                                    <div class="settings-verification-status">
+                                        <span class="settings-verification-icon" aria-hidden="true">!</span>
+                                        <div>
+                                            <strong>Verification not completed</strong>
+                                            <p>This demo does not collect or verify identity documents.</p>
+                                        </div>
+                                    </div>
+                                    <h3>What you may need</h3>
+                                    <p>When verification is available, you may be asked to confirm your name and campus identifier.</p>
+                                    <button class="btn btn-primary" type="button"
+                                            onclick="showNotice('Identity verification is not available in this demo.')">
+                                        Start verification
+                                    </button>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages inbox -->
+        <section id="messages" class="page messages-page" aria-labelledby="messagesHeading">
+            <header class="messages-page-heading">
+                <div>
+                    <p class="eyebrow">YOUR CAMPUS NETWORK</p>
+                    <h1 id="messagesHeading">Messages</h1>
+                    <p>Keep task conversations and updates in one place.</p>
+                </div>
+                <span class="messages-demo-label">DEMO INBOX</span>
+            </header>
+            <div class="messages-workspace">
+                <aside class="messages-inbox" aria-label="Conversation list">
+                    <div class="messages-inbox-heading">
+                        <h2>Inbox</h2>
+                        <span id="messagesCount" class="messages-count" aria-live="polite"></span>
+                    </div>
+                    <label class="messages-search">
+                        <span aria-hidden="true">⌕</span>
+                        <span class="sr-only">Search conversations</span>
+                        <input id="messageSearch" type="search" placeholder="Search messages">
+                    </label>
+                    <div class="messages-filters" role="group" aria-label="Filter conversations">
+                        <button class="active" type="button" data-message-filter="all"
+                                aria-pressed="true">All</button>
+                        <button type="button" data-message-filter="unread"
+                                aria-pressed="false">Unread</button>
+                    </div>
+                    <div id="messageThreadList" class="message-thread-list"></div>
+                </aside>
+                <section class="message-conversation" aria-label="Conversation">
+                    <header id="messageConversationHeader" class="message-conversation-header"></header>
+                    <div id="messageConversationBody" class="message-conversation-body"
+                         aria-live="polite"></div>
+                    <form id="messageComposer" class="message-composer">
+                        <label class="sr-only" for="messageInput">Write a message</label>
+                        <textarea id="messageInput" rows="2" maxlength="2000"
+                                  placeholder="Write a message..." required></textarea>
+                        <div class="message-composer-footer">
+                            <span>Be kind and keep it about the task.</span>
+                            <button class="btn btn-primary" type="submit">
+                                Send <span aria-hidden="true">↑</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <p class="messages-demo-note">
+                Demo inbox: sample conversations and messages are stored only for this page session.
+            </p>
+        </section>
+
+        <!-- PAGE 9: BILLING HISTORY -->
+        <section id="billing" class="page profile-page billing-page">
+            <div class="profile-page-heading">
+                <div>
+                    <p class="eyebrow">ACCOUNT</p>
+                    <h1>Billing &amp; payments</h1>
+                    <p>Review your transactions and manage your payment methods.</p>
+                </div>
+            </div>
+            <div class="profile-layout">
+                <aside class="profile-sidebar" aria-label="Account navigation">
+                    <div id="billingSummary" class="profile-summary"></div>
+                    <nav class="profile-sidebar-nav" aria-label="Account sections">
+                        <button type="button"
+                                onclick="handleAccountMenuAction('profile')">My Profile</button>
+                        <button class="active" type="button"
+                                onclick="handleAccountMenuAction('billing')">Billing &amp; Payments</button>
+                        <button type="button"
+                                onclick="handleAccountMenuAction('help')">Help</button>
+                    </nav>
+                    <div id="billingActions" class="profile-actions"></div>
+                </aside>
+                <div class="billing-content">
+                    <nav class="billing-tabs" role="tablist" aria-label="Billing sections">
+                        <button id="billingHistoryTab" class="active" type="button" role="tab"
+                                aria-selected="true" aria-controls="billingHistoryPanel"
+                                onclick="setBillingTab('history')">Billing history</button>
+                        <button id="paymentMethodsTab" type="button" role="tab"
+                                aria-selected="false" aria-controls="paymentMethodsPanel"
+                                onclick="setBillingTab('methods')">Payment methods</button>
+                        <button id="balancesTab" type="button" role="tab"
+                                aria-selected="false" aria-controls="balancesPanel"
+                                onclick="setBillingTab('balances')">Balances</button>
+                    </nav>
+                    <div class="billing-panels">
+                        <section id="billingHistoryPanel" class="billing-panel active"
+                                 role="tabpanel" aria-labelledby="billingHistoryTab">
+                            <section class="billing-history-card">
+                                <div class="billing-card-heading">
+                                    <div>
+                                        <h2>Billing history</h2>
+                                        <p>Your ComradeHustle transactions will appear here.</p>
+                                    </div>
+                                    <span class="billing-count">0 transactions</span>
+                                </div>
+                                <div class="billing-table-wrap">
+                                    <table class="billing-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Reference</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="billing-empty" colspan="5">
+                                                    <span class="billing-empty-icon" aria-hidden="true">↗</span>
+                                                    <strong>No billing activity yet</strong>
+                                                    <span>Completed payments and transaction details will show up here.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+                        </section>
+                        <section id="paymentMethodsPanel" class="billing-panel" role="tabpanel"
+                                 aria-labelledby="paymentMethodsTab" hidden>
+                            <section class="billing-history-card">
+                                <div class="billing-card-heading">
+                                    <div>
+                                        <h2>Payment methods</h2>
+                                        <p>Choose where you would like to receive payments.</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method-options" role="group"
+                                     aria-label="Choose a payment method">
+                                    <button class="payment-method-option mpesa-theme" type="button"
+                                            aria-pressed="false" onclick="selectPaymentMethod('mpesa')">
+                                        <span class="payment-brand-mark" aria-hidden="true">
+                                            <img class="payment-logo-img"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/1/15/M-PESA_LOGO-01.svg"
+                                                 alt="" loading="lazy">
+                                        </span>
+                                        <span><strong>M-Pesa</strong><small>Mobile money</small></span>
+                                    </button>
+                                    <button class="payment-method-option airtel-theme" type="button"
+                                            aria-pressed="false" onclick="selectPaymentMethod('airtel')">
+                                        <span class="payment-brand-mark" aria-hidden="true">
+                                            <img class="payment-logo-img"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/d/da/Airtel_Africa_logo.svg"
+                                                 alt="" loading="lazy">
+                                        </span>
+                                        <span><strong>Airtel Money</strong><small>Mobile money</small></span>
+                                    </button>
+                                    <button class="payment-method-option bank-theme" type="button"
+                                            aria-pressed="false" onclick="selectPaymentMethod('bank')">
+                                        <span class="payment-brand-mark" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" focusable="false">
+                                                <path d="M12 3 2 8v2h20V8L12 3ZM4 12v6H2v2h20v-2h-2v-6h-2v6h-3v-6h-2v6h-3v-6H7v6H6v-6H4Z"/>
+                                            </svg>
+                                        </span>
+                                        <span><strong>Bank Account</strong><small>Bank transfer</small></span>
+                                    </button>
+                                </div>
+                                <form id="paymentMethodForm" class="payment-method-form" hidden
+                                      onsubmit="savePaymentMethod(event)">
+                                    <div class="payment-setup-heading">
+                                        <h3 id="paymentSetupTitle">Set up payment method</h3>
+                                        <p id="paymentSetupDescription"></p>
+                                    </div>
+                                    <fieldset id="paymentPhoneOptions" class="payment-form-group" hidden>
+                                        <legend>Where should payments be sent?</legend>
+                                        <label class="payment-radio-option" for="registeredPaymentPhone">
+                                            <input id="registeredPaymentPhone" name="paymentPhoneChoice"
+                                                   type="radio" value="registered" checked
+                                                   onchange="togglePaymentPhoneInput()">
+                                            <span>Use my registered phone number</span>
+                                            <strong id="registeredPaymentPhoneValue"></strong>
+                                        </label>
+                                        <label class="payment-radio-option" for="alternatePaymentPhone">
+                                            <input id="alternatePaymentPhone" name="paymentPhoneChoice"
+                                                   type="radio" value="alternate"
+                                                   onchange="togglePaymentPhoneInput()">
+                                            <span>Use a different phone number</span>
+                                        </label>
+                                        <div id="alternatePhoneField" class="payment-input-field" hidden>
+                                            <label for="alternatePaymentPhoneNumber">Phone number to receive payment</label>
+                                            <input id="alternatePaymentPhoneNumber" type="tel"
+                                                   inputmode="tel" autocomplete="tel"
+                                                   placeholder="e.g. +254 712 345 678">
+                                        </div>
+                                    </fieldset>
+                                    <fieldset id="bankPaymentFields" class="payment-form-group" hidden>
+                                        <legend>Bank account details</legend>
+                                        <div class="payment-input-field">
+                                            <label for="paymentBankName">Bank name</label>
+                                            <select id="paymentBankName" autocomplete="organization" required>
+                                                <option value="">Select a bank</option>
+                                                <option>Absa Bank Kenya PLC</option>
+                                                <option>Access Bank (Kenya) PLC</option>
+                                                <option>African Banking Corporation Ltd (ABC Bank)</option>
+                                                <option>Bank of Africa Kenya Ltd</option>
+                                                <option>Bank of Baroda (Kenya) Ltd</option>
+                                                <option>Bank of India</option>
+                                                <option>Citibank N.A. Kenya</option>
+                                                <option>Co-operative Bank of Kenya Ltd</option>
+                                                <option>Commercial International Bank Kenya Ltd (CIB)</option>
+                                                <option>Consolidated Bank of Kenya Ltd</option>
+                                                <option>Credit Bank PLC</option>
+                                                <option>Development Bank of Kenya Ltd</option>
+                                                <option>Diamond Trust Bank Kenya Ltd</option>
+                                                <option>Ecobank Kenya Ltd</option>
+                                                <option>Equity Bank Kenya Ltd</option>
+                                                <option>Family Bank Ltd</option>
+                                                <option>Guaranty Trust Bank (Kenya) Ltd</option>
+                                                <option>Guardian Bank Ltd</option>
+                                                <option>Gulf African Bank Ltd</option>
+                                                <option>Housing Finance Company of Kenya Ltd (HFC)</option>
+                                                <option>I&amp;M Bank Ltd</option>
+                                                <option>KCB Bank Kenya Ltd</option>
+                                                <option>Kingdom Bank Ltd</option>
+                                                <option>Middle East Bank (Kenya) Ltd</option>
+                                                <option>M Oriental Bank Ltd</option>
+                                                <option>National Bank of Kenya Ltd</option>
+                                                <option>NCBA Bank Kenya PLC</option>
+                                                <option>Paramount Bank Ltd</option>
+                                                <option>Premier Bank Kenya Ltd</option>
+                                                <option>Prime Bank Ltd</option>
+                                                <option>SBM Bank Kenya Ltd</option>
+                                                <option>Sidian Bank Ltd</option>
+                                                <option>Spire Bank Ltd</option>
+                                                <option>Stanbic Bank Kenya Ltd</option>
+                                                <option>Standard Chartered Bank Kenya Ltd</option>
+                                                <option>United Bank for Africa Kenya Ltd</option>
+                                                <option>Victoria Commercial Bank PLC</option>
+                                            </select>
+                                        </div>
+                                        <div class="payment-input-field">
+                                            <label for="paymentAccountName">Account holder name</label>
+                                            <input id="paymentAccountName" type="text"
+                                                   autocomplete="name" placeholder="Name on the account">
+                                        </div>
+                                        <div class="payment-input-field">
+                                            <label for="paymentAccountNumber">Account number</label>
+                                            <input id="paymentAccountNumber" type="text"
+                                                   inputmode="numeric" autocomplete="off"
+                                                   placeholder="Enter your account number">
+                                        </div>
+                                    </fieldset>
+                                    <button class="btn btn-primary payment-save-button" type="submit">
+                                        Save payment method
+                                    </button>
+                                </form>
+                                <div id="savedPaymentMethods" class="saved-payment-methods"
+                                     aria-live="polite" hidden></div>
+                                <p class="payment-demo-note">
+                                    Payment details are kept only for this page session. This demo does not initiate transfers.
+                                </p>
+                            </section>
+                        </section>
+                        <section id="balancesPanel" class="billing-panel" role="tabpanel"
+                                 aria-labelledby="balancesTab" hidden>
+                            <div class="billing-balance-overview">
+                                <section class="billing-balance-card">
+                                    <div>
+                                        <span class="billing-balance-label">Available balance</span>
+                                        <strong>KSh 0</strong>
+                                        <p>Funds available in your ComradeHustle account</p>
+                                    </div>
+                                    <button class="btn btn-primary" type="button" disabled
+                                            aria-describedby="withdrawalNotice">Withdraw funds</button>
+                                    <p id="withdrawalNotice" class="billing-balance-notice">
+                                        Withdrawals are not available in this demo.
+                                    </p>
+                                </section>
+                                <div class="billing-balance-stats">
+                                    <article class="billing-balance-stat">
+                                        <span>Pending clearance</span>
+                                        <strong>KSh 0</strong>
+                                        <p>Payments being processed</p>
+                                    </article>
+                                    <article class="billing-balance-stat">
+                                        <span>Total earnings</span>
+                                        <strong>KSh 0</strong>
+                                        <p>Your earnings to date</p>
+                                    </article>
+                                </div>
+                                <section class="billing-balance-method">
+                                    <div>
+                                        <h2>Withdrawal method</h2>
+                                        <p>Add a payment method to manage where your earnings are sent.</p>
+                                    </div>
+                                    <button class="btn btn-outline" type="button"
+                                            onclick="setBillingTab('methods')">Manage payment methods</button>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                    <p class="billing-disclaimer">
+                        Payments are not yet processed through this demo website.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="help" class="page help-page" aria-labelledby="helpHeading">
+            <header class="help-page-heading">
+                <p class="eyebrow">COMRADEHUSTLE SUPPORT</p>
+                <h1 id="helpHeading">How can we help?</h1>
+                <p>Find quick answers and learn how the platform works.</p>
+            </header>
+
+            <nav class="help-navigation" aria-label="Help topics">
+                <a href="#helpFaq">FAQ</a>
+                <a href="#helpHowItWorks">How it Works</a>
+            </nav>
+
+            <section id="helpFaq" class="help-section" aria-labelledby="helpFaqHeading">
+                <div class="help-section-heading">
+                    <p class="eyebrow">QUICK ANSWERS</p>
+                    <h2 id="helpFaqHeading">Frequently asked questions</h2>
+                </div>
+                <div class="help-faq-list">
+                    <details>
+                        <summary>How do I find work on ComradeHustle?</summary>
+                        <p>Create an account as a freelancer, browse available campus jobs, and contact a hirer through the job listing.</p>
+                    </details>
+                    <details>
+                        <summary>How do I post a task?</summary>
+                        <p>Create an account as a hirer, then choose “Post a Task” from your profile. Add the task details, budget, location, and deadline so students know what to expect.</p>
+                    </details>
+                    <details>
+                        <summary>Are payments handled by ComradeHustle?</summary>
+                        <p>Not in this demo. Agree on payment details directly with the other person and verify them before starting work. Do not share sensitive account details in chat.</p>
+                    </details>
+                    <details>
+                        <summary>How can I contact someone about a job?</summary>
+                        <p>Open the job listing and use its contact option. You need to be logged in as a freelancer to contact a hirer.</p>
+                    </details>
+                    <details>
+                        <summary>Can I trust every job listing?</summary>
+                        <p>Listings are provided by users. Confirm the task, expectations, and payment with the hirer, and avoid offers that ask for money or sensitive personal information.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="helpHowItWorks" class="help-section" aria-labelledby="helpHowHeading">
+                <div class="help-section-heading">
+                    <p class="eyebrow">YOUR CAMPUS, YOUR COMMUNITY</p>
+                    <h2 id="helpHowHeading">How it Works</h2>
+                    <p>ComradeHustle helps students find flexible work and helps campus hirers get things done.</p>
+                </div>
+                <div class="help-how-grid">
+                    <article class="help-how-card">
+                        <span class="help-how-number">01</span>
+                        <h3>For students</h3>
+                        <ol>
+                            <li>Create an account as a freelancer.</li>
+                            <li>Browse campus jobs and check the requirements, pay, and deadline.</li>
+                            <li>Contact the hirer, agree on the details, and complete the task.</li>
+                        </ol>
+                    </article>
+                    <article class="help-how-card">
+                        <span class="help-how-number">02</span>
+                        <h3>For hirers</h3>
+                        <ol>
+                            <li>Create an account as a hirer.</li>
+                            <li>Post a clear task with its budget, location, and deadline.</li>
+                            <li>Review interested students, agree on the work, and confirm completion.</li>
+                        </ol>
+                    </article>
+                </div>
+                <p class="help-demo-note">ComradeHustle is currently a demo: it does not process payments or guarantee listings.</p>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#" class="logo" onclick="showPage('landing')">
+            🎓 Comrade<span>Hustle</span>
+        </a>
+        <p>Connecting comrades to campus opportunities.</p>
+        <p>&copy; <span id="year"></span> ComradeHustle</p>
+        <p class="small-note">
+            Demo website. Verify job offers and hirers before accepting work.
+        </p>
+    </footer>
+
+    <div id="notice" class="notice" role="status"
+         aria-live="polite"></div>
+
+</body>
+</html>
